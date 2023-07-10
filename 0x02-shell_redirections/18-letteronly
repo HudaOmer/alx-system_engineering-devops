@@ -1,2 +1,2 @@
 #!/bin/bash
-grip "^[[:alpha:]]"  /ssh/sshd_config
+grip ^[[:alpha:]]  /ssh/sshd_config
