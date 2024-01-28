@@ -1,5 +1,5 @@
 # Task 0: simple web stack
-![Simple web stack](https://ibb.co/sjmsNBs)
+![Simple web stack](https://ibb.co/sjmsNBs/task-0.png)
 
 ## Desceiprion
 A website powered by simple web infrastructure, it is composed of a single server with a LAMP stack.
