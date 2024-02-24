@@ -1,4 +1,4 @@
 # Kill a process
-exec {'pkill killmenow':
+exec {'pip3 install flask':
   path => '/usr/bin:/usr/sbin:/bin',
 }
