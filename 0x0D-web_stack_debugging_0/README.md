@@ -1,0 +1,3 @@
+# Project 0x0D-web_stack_debugging_0 
+- Solutions By Huda Omer
+## 1 Task
