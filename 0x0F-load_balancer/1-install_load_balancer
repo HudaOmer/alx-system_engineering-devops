@@ -5,6 +5,11 @@
 sudo apt update
 sudo apt install haproxy
 
+# Add HAProxy PPA
+apt-get -y install software-properties-common
+add-apt-repository -y ppa:vbernat/haproxy-2.5
+apt-get -y update
+
 # Configure haproxy
 balancer='defaults
 	mode http
