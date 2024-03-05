@@ -1,15 +1,6 @@
 #!/usr/bin/env bash
 # this script Install and configure HAproxy on lb-01 server
 
-# install haproxy
-sudo apt update
-sudo apt install haproxy
-
-# Add HAProxy PPA
-apt-get -y install software-properties-common
-add-apt-repository -y ppa:vbernat/haproxy-2.5
-apt-get -y update
-
 # Configure haproxy
 balancer='defaults
 	mode http
@@ -26,11 +17,23 @@ backend webservers
 	balance roundrobin
 	server 483739-web-01 52.91.133.80:80 check
 	server 483739-web-02 54.90.38.203:80 check
-'
+
+
+# Update packages
+sudo apt-get -y update
+sudo apt-get -y upgrade
+
+# Add HAProxy PPA
+sudo apt-get -y install software-properties-common
+sudo add-apt-repository -y ppa:vbernat/haproxy-2.5
+sudo apt-get -y update
+
+# Install HAProxy
+sudo apt-get -y install haproxy
 
 # add to config
 sudo echo "$balancer" >> /etc/haproxy/haproxy.cfg
 
 # Restart haproxy
 sudo systemctl enable haproxy
-sudo service haproxy restart
+sudo systemctl restart haproxy
