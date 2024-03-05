@@ -24,7 +24,7 @@ backend webservers
 '
 
 # add to config
-echo "$balancer" >> /etc/haproxy/haproxy.cfg
+sudo echo "$balancer" >> /etc/haproxy/haproxy.cfg
 
 # Restart haproxy
 sudo service haproxy restart
