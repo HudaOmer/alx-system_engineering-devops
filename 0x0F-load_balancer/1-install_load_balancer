@@ -32,4 +32,5 @@ backend webservers
 sudo echo "$balancer" >> /etc/haproxy/haproxy.cfg
 
 # Restart haproxy
+sudo systemctl enable haproxy
 sudo service haproxy restart
