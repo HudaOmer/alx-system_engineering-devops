@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-same as task 0, json format 
+same as task 0, json format
 """
 import json
 import requests
