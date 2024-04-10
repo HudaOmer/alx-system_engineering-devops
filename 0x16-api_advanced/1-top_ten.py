@@ -1,25 +1,25 @@
 #!/usr/bin/python3
-"""A module that uses Riddit API"""
+""" A module taht uses Riddit API FOR Top 10 subscribers """
 import requests
 
 
 def top_ten(subreddit):
-    """
-    a function that print the titles of the
-    10 hottest posts on a given subreddit.
-    """
-    url = "https://www.reddit.com/r/{}/hot/.json".format(subreddit)
-    headers = {
-        "User-Agent": "0x16-api_advanced:project:\
-v1.0.0 (by /u/firdaus_cartoon_jr)"
-    }
-    params = {
-        "limit": 10
-    }
-    response = requests.get(url, headers=headers, params=params,
-                            allow_redirects=False)
-    if response.status_code == 404:
-        print("None")
-        return
-    results = response.json().get("data")
-    [print(c.get("data").get("title")) for c in results.get("children")]
+    """A gunction to get top 10 subscribers"""
+    req = requests.get(
+        f"https://www.reddit.com/r/{subreddit}/hot.json",
+        headers={},
+        params={"limit": 10},
+    )
+
+    if req.status_code == 200:
+        data = req.json().get("data")
+        if data and "children" in data:
+            for child in data["children"]:
+                if "data" in child and "title" in child["data"]:
+                    print(child["data"]["title"])
+                else:
+                    print("Invalid post format: ", child)
+        else:
+            print("No data returned from Reddit.")
+    else:
+        print(None)
