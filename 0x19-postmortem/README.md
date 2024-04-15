@@ -1,5 +1,7 @@
 # Postmortem: Authentication Service Outage - April 12-13, 2024
 
+[load balancer meme](https://github.com/HudaOmer/alx-system_engineering-devops/blob/master/0x19-postmortem/Meme.jpg)
+
 ## Issue Summary
 - **Duration:** April 12, 2024, 08:00 UTC to April 13, 2024, 02:00 UTC
 - **Impact:** The authentication service experienced a complete outage, affecting 90% of users attempting to log in. Users were unable to access their accounts, resulting in frustration and service disruption.
